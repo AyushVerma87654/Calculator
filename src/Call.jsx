@@ -1,0 +1,17 @@
+import React from "react";
+
+function Call({ symbol, result, k, operator, setReact, value }) {
+  for (let i = 0; i < k; i++) {
+    if (operator[i] == symbol) {
+      setReact(value);
+      if (result == value) {
+        continue;
+      } else {
+        const timeout = setTimeout(3 * 1000);
+        return () => clearTimeout(timeout);
+      }
+    }
+  }
+}
+
+export default Call;
